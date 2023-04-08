@@ -9,7 +9,7 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero.git'
+        git branch: 'main', url: 'https://github.com/EziamaUgonna/Jenkins-Zero-To-Hero.git'
       }
     }
     stage('Build and Test') {
@@ -51,7 +51,8 @@ pipeline {
             GIT_USER_NAME = "EziamaUgonna"
         }
         steps {
-            withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
+           
+            withCredentials([string(credentialsId: 'githubs', variable: 'GITHUB_TOKEN')]) {
                 sh '''
                     git config user.email "elvindavin@gmail.com"
                     git config user.name "EziamaUgonna"
